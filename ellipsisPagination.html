@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="pagination.js"></script>
+    <style>
+        .pageBox .item {
+            display: inline-block;
+            font-size: 14px;
+            height: 28px;
+            line-height: 28px;
+            color: #666666;
+            border: 1px #d9d9d9 solid;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-right: 5px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+        }
+        .pageBox .item:hover, .pageBox .active{
+            color: #fff;
+            background: #4398f8;
+            border: 1px #4398f8 solid;
+        }
+        .pageBox .more {
+            display: inline-block;
+            border: none;
+            height: 34px;
+            line-height: 34px;
+            color: #666666;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .disabled {
+            cursor: not-allowed;
+            pointer-events: none;
+            opacity: 0.65;
+            filter: alpha(opacity=65);
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .pageBox {
+            font-size: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pageBox"></div>
+</body>
+<script>
+    $(".pageBox").ellipsisPaginator({
+        totalPages: 10,
+        pageNum: 6,
+        onPageClicked: function () {
+            console.log(arguments)
+        }
+    });
+</script>
+</html>
